@@ -19,6 +19,7 @@ const PRESET_DIMENSIONS = {
   story: { width: 1080, height: 1920, id: "AdStory" },
   landscape: { width: 1920, height: 1080, id: "AdLandscape" },
   spatrev: { width: 591, height: 1280, id: "SpatrevPromo" },
+  "spatrev-v2": { width: 591, height: 1280, id: "SpatrevPromoV2" },
 };
 
 function resolveConfig(rawConfig) {

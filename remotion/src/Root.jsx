@@ -1,6 +1,7 @@
 import { Composition } from "remotion";
 import { AdComposition } from "./AdComposition";
 import { SpatrevComposition } from "./SpatrevComposition";
+import { SpatrevCompositionV2 } from "./SpatrevCompositionV2";
 
 const FPS = 30;
 const DEFAULT_DURATION = 30;
@@ -76,10 +77,20 @@ export const RemotionRoot = () => {
         }}
       />
 
-      {/* Spatrev platform promo — fixed 591×1280 portrait */}
+      {/* Spatrev platform promo — v1 */}
       <Composition
         id="SpatrevPromo"
         component={SpatrevComposition}
+        durationInFrames={30 * FPS}
+        fps={FPS}
+        width={591}
+        height={1280}
+      />
+
+      {/* Spatrev platform promo — v2 (dynamic motion) */}
+      <Composition
+        id="SpatrevPromoV2"
+        component={SpatrevCompositionV2}
         durationInFrames={30 * FPS}
         fps={FPS}
         width={591}
