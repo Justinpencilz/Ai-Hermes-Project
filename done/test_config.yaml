@@ -1,0 +1,12 @@
+ad:
+  video: "test_input.mp4"
+  preset: "square"
+  output: "test_from_config.mp4"
+  headline: "Test Ad"
+  body:
+    - "Line 1"
+    - "Line 2"
+  cta: "Click Here"
+  brand:
+    name: "Test Brand"
+    tagline: "Tagline Here"
