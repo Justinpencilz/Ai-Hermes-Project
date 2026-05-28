@@ -3,7 +3,7 @@ Image overlay effects for Facebook ads.
 Logo placement, product shots, full-bleed backgrounds.
 """
 
-from moviepy import ImageClip, CompositeVideoClip
+from moviepy import ImageClip, CompositeVideoClip, ColorClip
 from moviepy.video.fx import FadeIn, FadeOut, SlideIn
 
 CANVAS_W = 1080
@@ -47,7 +47,7 @@ def product_shot(image_path, position=("center", "center"),
     img = img.with_duration(duration)
 
     if animation == "zoom_in":
-        img = img.with_effects([img.effxn.FadeIn(0.4)])
+        img = img.with_effects([FadeIn(0.4)])
     elif animation == "slide_up":
         img = img.with_effects([SlideIn(0.5, "bottom"), FadeOut(0.3)])
 
@@ -79,8 +79,6 @@ def image_background(image_path, duration=5, blur=False, darken=0.0):
     img = img.with_duration(duration)
 
     if darken > 0:
-        # Darken overlay
-        from moviepy import ColorClip
         overlay = ColorClip(
             color=(0, 0, 0),
             size=(CANVAS_W, CANVAS_H),
