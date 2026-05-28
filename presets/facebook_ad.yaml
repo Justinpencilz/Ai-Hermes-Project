@@ -1,0 +1,42 @@
+# Facebook Ad Video Presets
+# Each preset defines resolution, duration, style defaults
+
+presets:
+  square:
+    name: "Facebook Feed (Square)"
+    width: 1080
+    height: 1080
+    fps: 30
+    aspect: "1:1"
+    description: "Best for Facebook news feed"
+    safe_zone: 0.9  # keep content within 90% of frame
+
+  story:
+    name: "Facebook/IG Story (Vertical)"
+    width: 1080
+    height: 1920
+    fps: 30
+    aspect: "9:16"
+    description: "Full-screen mobile stories"
+    safe_zone: 0.85
+
+  landscape:
+    name: "Facebook Feed (Landscape)"
+    width: 1920
+    height: 1080
+    fps: 30
+    aspect: "16:9"
+    description: "Desktop news feed"
+    safe_zone: 0.9
+
+# Default style settings
+defaults:
+  font: "Arial"
+  primary_color: "#FF6B35"    # Orange - CTA accent
+  secondary_color: "#004E89"  # Deep blue
+  bg_color: "#1A1A2E"         # Dark background
+  text_color: "#FFFFFF"
+  accent_color: "#FFD700"     # Gold - highlights
+  music_volume: 0.3
+  sfx_volume: 0.7
+  voiceover_volume: 1.0
