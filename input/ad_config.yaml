@@ -1,0 +1,47 @@
+# ══════════════════════════════════════════
+# Facebook Ad Video — Config File
+# Create one of these per ad, drop it in input/
+# ══════════════════════════════════════════
+
+ad:
+  # ── Video source ──
+  video: "my_footage.mp4"          # Main video file in input/
+  
+  # ── Format ──
+  preset: "square"                 # square | story | landscape
+  
+  # ── Output ──
+  output: "my_ad_ready.mp4"        # Appears in output/
+
+  # ── Text overlays ──
+  headline: "Amazing Product"      # Big animated title
+  body:                            # Animated lines (staggered)
+    - "Problem you solve"
+    - "Your solution"
+    - "Limited offer"
+  cta: "Shop Now →"                # Call-to-action button
+
+  # ── Brand info (lower third) ──
+  brand:
+    name: "Your Brand"
+    tagline: "Tagline Here"
+
+  # ── Images ──
+  images:
+    logo: "logo.png"               # Logo file in input/
+    logo_position: "top-left"      # top-left | top-right | bottom-left | bottom-right
+    logo_size: [120, 120]          # width, height in pixels
+
+    product: "product.jpg"         # Product image in input/
+    product_position: "center"     # center | bottom | custom [x, y]
+    product_size: [400, 400]       # width, height
+    product_animation: "zoom_in"   # zoom_in | slide_up | fade_in
+
+    background: ""                 # Background image (optional)
+    background_darken: 0.3        # 0.0 = none, 1.0 = fully dark
+
+  # ── Audio ──
+  audio:
+    music: "bg_music.mp3"          # Background music in input/
+    music_volume: 0.3              # 0.0 - 1.0
+    voiceover: ""                  # Voiceover file (optional)
