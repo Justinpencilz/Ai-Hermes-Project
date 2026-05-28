@@ -117,26 +117,15 @@ def push_to_github():
         print(f"⚠️ Git error: {e}")
         return False
 
-def notify_telegram(output_paths):
-    """Send Telegram notification about completed videos."""
-    msg_lines = ["🎬 **Ad Studio — New Video Ready**", ""]
+def notify(output_paths):
+    """Print notification (cron job delivers to Telegram)."""
+    if not output_paths:
+        return
+    print("\n📬 READY FOR DELIVERY")
     for p in output_paths:
         size = os.path.getsize(p) / 1024
-        msg_lines.append(f"✅ `{os.path.basename(p)}` — {size:.0f} KB")
-    msg_lines.append("")
-    msg_lines.append(f"📂 GitHub: Justinpencilz/Ai-Hermes-Project")
-    message = "\n".join(msg_lines)
-
-    # Send via Hermes send_message (hermes CLI)
-    import subprocess
-    try:
-        subprocess.run(
-            ["hermes", "send", "--message", message],
-            capture_output=True, text=True, timeout=30
-        )
-    except:
-        # Fallback: just print
-        print(message)
+        print(f"  ✅ {os.path.basename(p)} — {size:.0f} KB")
+    print(f"  📂 github.com/Justinpencilz/Ai-Hermes-Project")
 
 def main():
     print("═" * 50)
@@ -162,7 +151,7 @@ def main():
 
     if output_paths:
         push_to_github()
-        notify_telegram(output_paths)
+        notify(output_paths)
         print(f"\n✅ Done — {len(output_paths)} video(s) processed")
 
 if __name__ == "__main__":
