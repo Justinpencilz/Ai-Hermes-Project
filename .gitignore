@@ -2,3 +2,8 @@ __pycache__/
 *.pyc
 *.pyo
 .env
+remotion/node_modules/
+remotion/.webpack/
+remotion/dist/
+remotion/*.mp4
+remotion/*.webm
